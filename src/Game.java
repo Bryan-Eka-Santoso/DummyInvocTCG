@@ -458,7 +458,7 @@ public class Game {
                             }
                         } else if(inputPlay == 3){
                             if(turn % 2 == 0){
-                                if(cardPlayer1.get(actCard1).elemen == "Fire"){
+                                if(cardPlayer1.get(actCard1) instanceof Pyro){
                                     if(cardPlayer1.get(actCard1).skillPoint < 1){
                                         System.out.println("Not enough skill points to use the skill.");
                                     } else if(daduPlayer1[actCard1] < 2){
@@ -471,11 +471,13 @@ public class Game {
                                         System.out.println("Pyro Maniac used its skill!");
                                         turn++;
                                     }
-                                } else if(cardPlayer1.get(actCard1).elemen == "Water"){
+                                } else if(cardPlayer1.get(actCard1) instanceof Atlantic){
                                     if(cardPlayer1.get(actCard1).skillPoint < 2){
                                         System.out.println("Not enough skill points to use the skill.");
                                     } else if(daduPlayer1[actCard1] < 2){
                                         System.out.println("Not enough dice card active to use the skill.");
+                                    } else if(cardPlayer1.get(actCard1).hp < 3){
+                                        System.out.println("Not enough hp card active.");
                                     } else {
                                         for(int i = 0; i < 3; i++){
                                             cardPlayer2.get(i).hp -= 2;
@@ -487,7 +489,7 @@ public class Game {
                                         System.out.println("Atlantic Siren used its skill!");
                                         turn++;
                                     }
-                                } else if(cardPlayer1.get(actCard1).elemen == "Flora"){
+                                } else if(cardPlayer1.get(actCard1) instanceof Stone){
                                     if(cardPlayer1.get(actCard1).skillPoint < 2){
                                         System.out.println("Not enough skill points to use the skill.");
                                     } else if(daduPlayer1[actCard1] < 2){
@@ -508,7 +510,7 @@ public class Game {
                                         System.out.println("Stone Golem used its skill!");
                                         turn++;
                                     }
-                                } else if(cardPlayer1.get(actCard1).elemen == "Light"){
+                                } else if(cardPlayer1.get(actCard1) instanceof Holy){
                                     if(cardPlayer1.get(actCard1).skillPoint < 2){
                                         System.out.println("Not enough skill points to use the skill.");
                                     } else if(daduPlayer1[actCard1] < 2){
@@ -535,7 +537,7 @@ public class Game {
                                         System.out.println("Holy Paladin used its skill!");
                                         turn++;
                                     }
-                                } else if(cardPlayer1.get(actCard1).elemen == "Dark"){
+                                } else if(cardPlayer1.get(actCard1) instanceof Grim){
                                     if(cardPlayer1.get(actCard1).skillPoint < 2){
                                         System.out.println("Not enough skill points to use the skill.");
                                     } else if(daduPlayer1[actCard1] < 2){
@@ -558,7 +560,7 @@ public class Game {
                                     }
                                 }
                             } else {
-                                if(cardPlayer2.get(actCard2).elemen == "Fire"){
+                                if(cardPlayer2.get(actCard2) instanceof Pyro){
                                     if(cardPlayer2.get(actCard2).skillPoint < 1){
                                         System.out.println("Not enough skill points to use the skill.");
                                     } else if(daduPlayer2[actCard2] < 2){
@@ -571,11 +573,13 @@ public class Game {
                                         System.out.println("Pyro Maniac used its skill!");
                                         turn++;
                                     }
-                                } else if(cardPlayer2.get(actCard2).elemen == "Water"){
+                                } else if(cardPlayer2.get(actCard2) instanceof Atlantic){
                                     if(cardPlayer2.get(actCard2).skillPoint < 2){
                                         System.out.println("Not enough skill points to use the skill.");
                                     } else if(daduPlayer2[actCard2] < 2){
                                         System.out.println("Not enough dice card active to use the skill.");
+                                    } else if(cardPlayer2.get(actCard2).hp < 3){
+                                        System.out.println("Not enough hp card active.");
                                     } else {
                                         for(int i = 0; i < 3; i++){
                                             cardPlayer1.get(i).hp -= 2;
@@ -587,7 +591,7 @@ public class Game {
                                         System.out.println("Atlantic Siren used its skill!");
                                         turn++;
                                     }
-                                } else if(cardPlayer2.get(actCard2).elemen == "Flora"){
+                                } else if(cardPlayer2.get(actCard2) instanceof Stone){
                                     if(cardPlayer2.get(actCard2).skillPoint < 2){
                                         System.out.println("Not enough skill points to use the skill.");
                                     } else if(daduPlayer2[actCard2] < 2){
@@ -608,7 +612,7 @@ public class Game {
                                         System.out.println("Stone Golem used its skill!");
                                         turn++;
                                     }
-                                } else if(cardPlayer2.get(actCard2).elemen == "Light"){
+                                } else if(cardPlayer2.get(actCard2) instanceof Holy){
                                     if(cardPlayer2.get(actCard2).skillPoint < 2){
                                         System.out.println("Not enough skill points to use the skill.");
                                     } else if(daduPlayer2[actCard2] < 2){
@@ -635,7 +639,7 @@ public class Game {
                                         System.out.println("Holy Paladin used its skill!");
                                         turn++;
                                     }
-                                } else if(cardPlayer2.get(actCard2).elemen == "Dark"){
+                                } else if(cardPlayer2.get(actCard2) instanceof Grim){
                                     if(cardPlayer2.get(actCard2).skillPoint < 2){
                                         System.out.println("Not enough skill points to use the skill.");
                                     } else if(daduPlayer2[actCard2] < 2){
